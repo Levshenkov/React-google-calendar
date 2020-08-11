@@ -1,8 +1,6 @@
-/* eslint-disable import/no-extraneous-dependencies */
-const { resolve } = require('path');
+const {resolve} = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
-
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const config = {
   entry: './client/main.js',
   mode: 'development',
@@ -18,7 +16,7 @@ const config = {
     host: 'localhost',
     index: 'index.html',
     overlay: {
-      warnings: false,
+      warning: false,
       errors: true,
     },
   },
@@ -32,7 +30,7 @@ const config = {
       },
       {
         test: /\.(js|jsx)$/,
-        loaders: ['babel_loader'],
+        loaders: ['babel-loader'],
         exclude: /node_modules/,
       },
       {
@@ -64,7 +62,6 @@ const config = {
       ],
     }),
   ],
-
-};
+}
 
 module.exports = config;
