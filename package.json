@@ -5,8 +5,16 @@
   "repository": "git@github.com:Levshenkov/React-google-calendar.git",
   "author": "Levshenkov <levshenkov.denys@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev:build": "webpack --config webpack.dev.config.js",
+    "dev:watch": "webpack-dev-server --config webpack.dev.config.js"
+
+  },
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   }
 }
