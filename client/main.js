@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
 const Home = () => {
-    return <div>1</div> 
-    }
+  return <div>Main</div>
+}
 
-const target = document.getElementById('root');
+const target = document.getElementById('root')
 
-ReactDOM.render(<Home />, target);
+ReactDOM.render(<Home />, target)

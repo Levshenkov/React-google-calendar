@@ -7,10 +7,12 @@
   "license": "MIT",
   "scripts": {
     "dev:build": "webpack --config webpack.dev.config.js",
-    "dev:watch": "webpack-dev-server --open --config webpack.dev.config.js"
+    "dev:watch": "webpack-dev-server --open --config webpack.dev.config.js",
+    "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
   },
   "dependencies": {
     "babel": "^6.23.0",
+    "eslint-config-prettier": "^6.11.0",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
