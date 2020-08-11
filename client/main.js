@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const Home = () => {
-    return <div>1</div>
+    return <div>1</div> 
     }
 
 const target = document.getElementById('root');
