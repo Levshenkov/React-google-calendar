@@ -1,6 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const { resolve } = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
+
 const config = {
   entry: './client/main.js',
   mode: 'development',
@@ -34,7 +36,7 @@ const config = {
         exclude: /node_modules/
       },
       {
-        test: /\.scss$/,
+        test: /\.(css|scss)$/,
         loaders: [
           {
             loader: MiniCSSExtractPlugin.loader,
@@ -43,7 +45,8 @@ const config = {
             }
           },
           'css-loader',
-          'sass-loader'
+          'sass-loader',
+          'postcss-loader'
         ],
         exclude: /node_modules/
       }
