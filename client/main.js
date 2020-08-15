@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Test from './components/test'
+import Calendar from './components/calendar'
 import './main.css'
 
 const Home = () => {
   return (
     <div>
-      <Test />
+      <Calendar />
     </div>
   )
 }
