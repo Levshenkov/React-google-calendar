@@ -1,11 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const { WEEK_DAYS, MONTHS, ONE_WEEK } = require('./calendar-const')
 
 const { createMonth } = require('./calendar-func.js')
 
 
-const Calendar = () => {
+const Calendar = (props) => {
+
+  const [events, setEvents] = useState([])
+
+  useEffect(() => {
+    const url = `https://www.googleapis.com/calendar/v3/calendars/${props.calendarId}/events?key=${props.apiKey}`
+
+    axios(url).then(({ data }) => {
+      setEvents(
+        data.items.map((event) => ({
+          start: event.start.date || event.start.dateTime,
+          end: event.end.date || event.end.dateTime,
+          title: event.summary
+        }))
+      )
+    })
+  }, [props.apiKey, props.calendarId])
+
   const currentDate = new Date()
   const currentDayNumber = currentDate.getDate()
   const currentMonthNumber = currentDate.getMonth()
