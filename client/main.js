@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Test from './components/test'
+import Calendar from './components/calendar'
 import './main.css'
 
 const Home = () => {
   const CALENDAR_ID = 'kcej035h7eidvmqc2cgcljchb0@group.calendar.google.com'
-  const API_KEY = 'AIzaSyB3PqDm4Ndi3j_N0DcaRk5lQzu7c4GnFKY'
+  const API_KEY = 'YOUR_API_KEY'
   return (
     <div>
-      <Test calendarId={CALENDAR_ID} apiKey={API_KEY} />
+      <Calendar calendarId={CALENDAR_ID} apiKey={API_KEY}/>
     </div>
   )
 }
