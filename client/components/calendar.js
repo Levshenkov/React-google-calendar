@@ -9,8 +9,7 @@ const Calendar = (props) => {
   const [events, setEvents] = useState({})
 
   useEffect(() => {
-    const testKey = 'AIzaSyB3PqDm4Ndi3j_N0DcaRk5lQzu7c4GnFKY'
-    const url = `https://www.googleapis.com/calendar/v3/calendars/${props.calendarId}/events?key=${testKey}`
+    const url = `https://www.googleapis.com/calendar/v3/calendars/${props.calendarId}/events?key=${props.apiKey}`
 
     axios(url).then(({ data }) => {
       const eList = data.items.reduce((acc, event) => {
