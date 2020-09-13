@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+// import ReactDOM from 'react-dom'
 import Calendar from './components/calendar'
 import './main.css'
 
@@ -8,11 +8,9 @@ const Home = () => {
   const API_KEY = 'YOUR_API_KEY'
   return (
     <div>
-      <Calendar calendarId={CALENDAR_ID} apiKey={API_KEY}/>
+      <Calendar calendarId={CALENDAR_ID} apiKey={API_KEY} />
     </div>
   )
 }
 
-const target = document.getElementById('root')
-
-ReactDOM.render(<Home />, target)
+export default Home

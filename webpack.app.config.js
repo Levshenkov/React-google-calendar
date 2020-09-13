@@ -4,13 +4,11 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 
 const config = {
-  entry: './client/main.js',
+  entry: './client/app.js',
   mode: 'development',
   output: {
-    filename: 'js/calendar.bundle.js',
-    path: resolve(__dirname, 'dist'),
-    library: 'calendar.bundle.js',
-    libraryTarget: 'umd'
+    filename: 'js/app.bundle.js',
+    path: resolve(__dirname, 'dist')
   },
   devServer: {
     hot: true,

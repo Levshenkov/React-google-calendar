@@ -7,6 +7,10 @@ const { createMonthArray } = require('./calendar-func.js')
 
 const Calendar = (props) => {
   const [events, setEvents] = useState({})
+  const dateTmp = new Date()
+  const currentDate = new Date(dateTmp.getFullYear(), dateTmp.getMonth(), dateTmp.getDate())
+
+  const [focusDate, setFocusDate] = useState(currentDate)
 
   useEffect(() => {
     const url = `https://www.googleapis.com/calendar/v3/calendars/${props.calendarId}/events?key=${props.apiKey}`
@@ -40,11 +44,6 @@ const Calendar = (props) => {
       setEvents(eList)
     })
   }, [props.apiKey, props.calendarId])
-
-  const dateTmp = new Date()
-  const currentDate = new Date(dateTmp.getFullYear(), dateTmp.getMonth(), dateTmp.getDate())
-
-  const [focusDate, setFocusDate] = useState(currentDate)
 
   const monthArray = createMonthArray(focusDate)
   const weekDays = new Array(7).fill(0).map((it, i) => WEEK_DAYS[i])
